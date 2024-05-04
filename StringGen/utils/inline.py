@@ -18,10 +18,10 @@ keyboard = InlineKeyboardMarkup(
 gen_key = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="My bots", callback_data="pyrogram1"),
-            InlineKeyboardButton(text="ᴩʏʀᴏɢʀᴀᴍ v2", callback_data="pyrogram"),
+            InlineKeyboardButton(text="Aɴɪᴍᴇ 1", url=f"https://t.me/Dark_Support_Group"),
+            InlineKeyboardButton(text="Aɴɪᴍᴇ 2", url=f"https://t.me/Dark_Support_Group"),
         ],
-        [InlineKeyboardButton(text="ᴛᴇʟᴇᴛʜᴏɴ", callback_data="telethon")],
+        [InlineKeyboardButton(text="Jᴜɪᴜᴛsᴜ ᴋᴀɪsᴇɴ", url=f"https://t.me/Jujustu_Kaisen_Season_2_Hindi")],
     ]
 )
 
