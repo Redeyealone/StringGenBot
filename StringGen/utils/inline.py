@@ -33,7 +33,7 @@ gen_key = InlineKeyboardMarkup(
         disable_web_page_preview=True,
         parse_mode=enums.ParseMode.HTML,
         reply_to_message_id=update.id
-)
+
 
 
 retry_key = InlineKeyboardMarkup(
