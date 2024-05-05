@@ -3,7 +3,6 @@ from pyrogram.types import CallbackQuery
 
 from StringGen import Anony
 from StringGen.utils import gen_key
-from StringGen.utils import my_key
 from StringGen.modules.gen import gen_session
 
 
@@ -15,7 +14,7 @@ async def cb_choose(_, cq: CallbackQuery):
     query = cq.matches[0].group(1)
     if query == "gensession":
         return await cq.message.reply_text(
-            text="<b>» ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ Aɴɪᴍᴇ ⚡ :</b>",
+            text="<b>» ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ғᴏʀ ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ sᴇssɪᴏɴ :</b>",
             reply_markup=gen_key,
         )
     elif query.startswith("pyrogram") or query.startswith("telethon"):
