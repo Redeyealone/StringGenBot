@@ -2,6 +2,22 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from config import SUPPORT_CHAT
 
+def button_callback(update, context):
+    query = update.callback_query
+    query.answer()
+
+    if query.data == 'next':
+        context.bot.send_message(chat_id=query.message.chat_id, text="Next button clicked!")
+    elif query.data == 'previous':
+        context.bot.send_message(chat_id=query.message.chat_id, text="Previous button clicked!")
+
+# Create the inline keyboard
+def create_inline_keyboard():
+    keyboard = [
+        [InlineKeyboardButton("Previous", callback_data='previous'),
+         InlineKeyboardButton("Next", callback_data='next')]
+    ]
+    return InlineKeyboardMarkup(keyboard)
 
 keyboard = InlineKeyboardMarkup(
     [
