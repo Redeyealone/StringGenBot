@@ -17,8 +17,8 @@ keyboard = InlineKeyboardMarkup(
 gen_key = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="Anime 1", callback_data="pyrogram1"),
-            InlineKeyboardButton(text="Anime 2", callback_data="pyrogram"),
+            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url=SUPPORT_CHAT),
+            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url=SUPPORT_CHAT),
         ],
         [InlineKeyboardButton(text="Godfather", callback_data="telethon")],
     ]
