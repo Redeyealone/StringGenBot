@@ -7,7 +7,7 @@ load_dotenv()
 
 API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
-UPDATES_CHANNEL = ("https://t.me/Matching_pfp_Gallery")
+UPDATES_CHANNEL = str(os.environ.get('UPDATES_CHANNEL', Matching_pfp_Gallery))
 BOT_TOKEN = getenv("BOT_TOKEN")
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
