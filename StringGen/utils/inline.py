@@ -1,32 +1,38 @@
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
 
-from config import SUPPORT_CHAT
+# Define the command handler for the /start command
+def start(update, context):
+    reply_markup = create_inline_keyboard()
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Hello! I'm your bot.", reply_markup=reply_markup)
 
+# Define the callback handler for inline keyboard button clicks
+def button_callback(update, context):
+    query = update.callback_query
+    query.answer()
 
-keyboard = InlineKeyboardMarkup(
-    [
-        [InlineKeyboardButton(text="Aɴɪᴍᴇ", callback_data="gensession")],
-        [
-            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/doraemonbots"),
-            InlineKeyboardButton(
-                text="", url="https://github.com/AnonymousX1025/StringGenBot"
-            ),
-        ],
+    if query.data == 'next':
+        context.bot.send_message(chat_id=query.message.chat_id, text="Next button clicked!")
+    elif query.data == 'previous':
+        context.bot.send_message(chat_id=query.message.chat_id, text="Previous button clicked!")
+
+# Create the inline keyboard
+def create_inline_keyboard():
+    keyboard = [
+        [InlineKeyboardButton("Previous", callback_data='previous'),
+         InlineKeyboardButton("Next", callback_data='next')]
     ]
-)
+    return InlineKeyboardMarkup(keyboard)
 
-gen_key = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(text="Aɴɪᴍᴇ 1", url=f"https://t.me/Dark_Support_Group"),
-            InlineKeyboardButton(text="Aɴɪᴍᴇ 2", url=f"https://t.me/Dark_Support_Group"),
-            InlineKeyboardButton('Close 🔐', callback_data='close')
-     #       InlineKeyboardButton("Next ⏩", callback_data=f"navigate({index_val}|next|{query})"),
-        ],
-        [InlineKeyboardButton(text="VINCENZO", url=f"https://telegram.me/PublicFileStore01_Bot?start=PUBLIC_NjY1MQ==")],
-    ]
+# Create an Updater and attach the handlers
+updater = Updater(token='YOUR_BOT_TOKEN', use_context=True)
+dispatcher = updater.dispatcher
 
-)
-retry_key = InlineKeyboardMarkup(
-    [[InlineKeyboardButton(text="ᴛʀʏ ᴀɢᴀɪɴ", callback_data="gensession")]]
-)
+start_handler = CommandHandler('start', start)
+dispatcher.add_handler(start_handler)
+
+button_handler = CallbackQueryHandler(button_callback)
+dispatcher.add_handler(button_handler)
+
+# Start the bot
+updater.start_polling()
