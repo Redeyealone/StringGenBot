@@ -25,17 +25,16 @@ gen_key = InlineKeyboardMarkup(
         ],
         [InlineKeyboardButton(text="VINCENZO", url=f"https://telegram.me/PublicFileStore01_Bot?start=PUBLIC_NjY1MQ==")],
     ]
+
+       await bot.send_message(
+        chat_id=update.chat.id,
+        text=Translation.ABOUT_TEXT,
+        reply_markup=reply_markup,
+        disable_web_page_preview=True,
+        parse_mode=enums.ParseMode.HTML,
+        reply_to_message_id=update.id
 )
 
-my_key = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(text="Aɴɪᴍᴇ 1", url=f"https://t.me/Dark_Support_Group"),
-            InlineKeyboardButton(text="Aɴɪᴍᴇ 2", url=f"https://t.me/Dark_Support_Group"),
-        ],
-        [InlineKeyboardButton(text="VINCENZO", url=f"https://telegram.me/PublicFileStore01_Bot?start=PUBLIC_NjY1MQ==")],
-    ]
-)
 
 retry_key = InlineKeyboardMarkup(
     [[InlineKeyboardButton(text="ᴛʀʏ ᴀɢᴀɪɴ", callback_data="gensession")]]
