@@ -3,6 +3,7 @@ from pyrogram.types import CallbackQuery
 
 from StringGen import Anony
 from StringGen.utils import gen_key
+from StringGen.utils import my_key
 from StringGen.modules.gen import gen_session
 
 
