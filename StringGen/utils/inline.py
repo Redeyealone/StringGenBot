@@ -1,5 +1,4 @@
-import InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 # Define the command handler for the /start command
 def start(update, context):
