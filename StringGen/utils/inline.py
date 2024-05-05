@@ -25,7 +25,8 @@ gen_key = InlineKeyboardMarkup(
         ],
         [InlineKeyboardButton(text="VINCENZO", url=f"https://telegram.me/PublicFileStore01_Bot?start=PUBLIC_NjY1MQ==")],
     ]
-   
+
+)
 retry_key = InlineKeyboardMarkup(
     [[InlineKeyboardButton(text="ᴛʀʏ ᴀɢᴀɪɴ", callback_data="gensession")]]
 )
