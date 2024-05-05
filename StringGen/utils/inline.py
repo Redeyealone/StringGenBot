@@ -34,10 +34,10 @@ keyboard = InlineKeyboardMarkup(
 gen_key = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="ᴩʏʀᴏɢʀᴀᴍ v1", callback_data="pyrogram1"),
-            InlineKeyboardButton(text="ᴩʏʀᴏɢʀᴀᴍ v2", callback_data="pyrogram"),
+            InlineKeyboardButton(text="ᴩʏʀᴏɢʀᴀᴍ v1", url=SUPPORT_CHAT),
+            InlineKeyboardButton(text="ᴩʏʀᴏɢʀᴀᴍ v2", url=SUPPORT_CHAT),
         ],
-        [InlineKeyboardButton(text="ᴛᴇʟᴇᴛʜᴏɴ", callback_data="telethon")],
+        [InlineKeyboardButton(text="ᴛᴇʟᴇᴛʜᴏɴ", url=SUPPORT_CHAT)],
     ]
 )
 
