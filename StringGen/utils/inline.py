@@ -20,6 +20,8 @@ gen_key = InlineKeyboardMarkup(
         [
             InlineKeyboardButton(text="Aɴɪᴍᴇ 1", url=f"https://t.me/Dark_Support_Group"),
             InlineKeyboardButton(text="Aɴɪᴍᴇ 2", url=f"https://t.me/Dark_Support_Group"),
+            InlineKeyboardButton('Close 🔐', callback_data='close')
+     #       InlineKeyboardButton("Next ⏩", callback_data=f"navigate({index_val}|next|{query})"),
         ],
         [InlineKeyboardButton(text="VINCENZO", url=f"https://telegram.me/PublicFileStore01_Bot?start=PUBLIC_NjY1MQ==")],
     ]
