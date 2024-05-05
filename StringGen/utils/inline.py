@@ -25,7 +25,7 @@ def create_inline_keyboard():
     return InlineKeyboardMarkup(keyboard)
 
 # Create an Updater and attach the handlers
-updater = Updater(token='YOUR_BOT_TOKEN', use_context=True)
+updater = Updater(token='6571094339:AAGcENp3AmPPJslc88ERGsT_VdJ20hKTtvQ', use_context=True)
 dispatcher = updater.dispatcher
 
 start_handler = CommandHandler('start', start)
